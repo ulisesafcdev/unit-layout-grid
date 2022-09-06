@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+* ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+* ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 60vh repeat(4, min-content) 20vh;
+  grid-template-areas: "nav" "header" "p-container" "skills" "projects" "contacto" "footer";
+  /*     > * {
+          // background-color: #222;
+          // color: #dc143c;
+          // border: thin solid #111;
+          // text-align: center;
+      } */
+}
+body .nav {
+  grid-area: nav;
+  background-color: #143f6b;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 auto;
+  position: sticky;
+  top: 0;
+}
+body .nav a {
+  text-decoration: none;
+  color: #14C38E;
+  padding: 1rem 1rem;
+}
+body .nav a:hover {
+  background-color: #143f8e;
+  color: #ddd;
+}
+body .header {
+  grid-area: header;
+  background-color: rgba(0, 0, 0, 0.507);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/banner.png");
+  background-position: center;
+  background-blend-mode: darken;
+}
+body .header h1 {
+  text-shadow: 1px 1px 2px #000;
+  color: #ddd;
+  text-align: center;
+}
+body .p-container {
+  grid-area: p-container;
+  padding: 1rem;
+  text-align: center;
+}
+body .p-container h3 {
+  margin-bottom: 1rem;
+}
+body .p-container img {
+  max-width: 280px;
+  margin-top: 1rem;
+  border-radius: 100%;
+}
+body .skills {
+  grid-area: skills;
+  padding: 1rem;
+}
+body .skills h3 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+body .skills h5 {
+  margin: 5px 0;
+  text-align: right;
+}
+body .skills .container-skills {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 100px;
+  color: #222;
+}
+body .skills .container-skills .skills {
+  padding: 7px 7px;
+  font-size: 12px;
+  border-radius: 100px;
+  color: #ddd;
+  text-align: right;
+}
+body .skills .container-skills .html {
+  width: 85%;
+  background: linear-gradient(to left, #A43931, #1D4350);
+}
+body .skills .container-skills .css {
+  width: 85%;
+  background: linear-gradient(to left, #A43931, #1D4350);
+}
+body .skills .container-skills .flexbox {
+  width: 75%;
+  background: linear-gradient(to left, #A43931, #1D4350);
+}
+body .skills .container-skills .grid {
+  width: 75%;
+  background: linear-gradient(to left, #A43931, #1D4350);
+}
+body .skills .container-skills .js {
+  width: 55%;
+  background: linear-gradient(to left, #A43931, #1D4350);
+}
+body .skills .container-skills .php {
+  width: 40%;
+  background: linear-gradient(to left, #A43931, #1D4350);
+}
+body .projects {
+  grid-area: projects;
+}
+body .projects h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+body .projects .card {
+  background: linear-gradient(to left, #b92b27, #1565c0);
+  margin: 1rem 0.5rem;
+  border-radius: 7px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;
+  color: #ddd;
+}
+body .projects .card .link-project a {
+  color: #ddd;
+  text-decoration: none;
+}
+body .projects .card .link-project a:hover {
+  color: #ccc;
+  text-decoration: underline;
+}
+body .contacto {
+  grid-area: contacto;
+}
+body .contacto h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+body .contacto .form-contact {
+  padding: 1rem;
+}
+body .contacto .form-contact form {
+  display: flex;
+  flex-direction: column;
+  background-color: #ddd;
+  padding: 1rem;
+}
+body .contacto .form-contact form label {
+  margin: 0.5rem 0;
+}
+body .contacto .form-contact form input, body .contacto .form-contact form textarea {
+  padding: 7px;
+  outline: none;
+}
+body .contacto .form-contact form #btn {
+  margin-top: 1rem;
+  background-color: #143f8e;
+  padding: 1rem 0;
+  border-radius: 7px;
+  text-transform: uppercase;
+  color: #ddd;
+  border: none;
+}
+body .contacto .form-contact form #btn:hover {
+  background-color: #143f6b;
+}
+body .footer {
+  grid-area: footer;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #14C38E;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content 60vh repeat(3, min-content) 20vh;
+    grid-template-areas: "nav            nav" "header         header" "p-container    skills" "projects       projects" "contacto       contacto" "footer         footer";
+  }
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .projects h3 {
+    flex-basis: 100%;
+  }
+  .projects .card {
+    flex: 1 0 250px;
+  }
+}
+@media screen and (min-width: 992px) {
+  body {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: min-content 60vh repeat(2, min-content) 20vh;
+    grid-template-areas: "nav            nav         nav         nav         nav         nav" "header         header      header      header      header      header" "p-container    p-container p-container skills      skills      skills" "projects       projects    projects    projects    contacto    contacto" "footer         footer      footer      footer      footer      footer";
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
